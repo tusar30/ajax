@@ -121,7 +121,7 @@
                 <input type="text" id="lname" name="lname" ><span id="lnameErr" style="color : red;"><?php echo $lnameErr; ?></span>
                 <br><br>
                 <label for ="gender">Gender :</label>
-             
+                <br>
                 <input type="radio" id="male" name="gender" value="male" >
                 <label for="male">Male</label>
                 <input type="radio" id="female" name="gender" value="female" >
@@ -138,7 +138,7 @@
                 <select name="religion" id="religion" >
                     <option value="Islam">Islam</option>
                     <option value="Hindu">Hindu</option>
-                    <option value="Christian">Cristan</option>
+                    <option value="Cristan">Christian</option>
                     <option value="Buddhism">Buddhism</option>
                 </select>
                 <span id="religionErr" style="color : red;"><?php echo $religionErr; ?></span>
@@ -158,7 +158,7 @@
                 <textarea name="paddress" id="paddress" cols="40" rows="3"></textarea>
                 <br><br>
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{5}[0-9]{6}">
+                <input type="tel" id="phone" name="phone"  pattern="[0-9]{5}[0-9]{6}">
                 <br><br>
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email"  pattern=".+@+.+.com" ><span id="emailErr" style="color : red;"><?php echo $emailErr; ?></span>
@@ -174,10 +174,10 @@
             <fieldset>
                 <legend>Account Information:</legend>
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" ><span style="color : red;"><?php echo $userNameErr; ?></span>
+                <input type="text" id="username" name="username" ><span id="userNameErr" style="color : red;"><?php echo $userNameErr; ?></span>
                 <br><br>
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" pattern=".{4,}" ><span style="color : red;"><?php echo $passwordErr; ?></span>
+                <input type="password" id="password" name="password" pattern=".{4,}" ><span id="passwordErr" style="color : red;"><?php echo $passwordErr; ?></span>
                 <br><br>
                 <input type="submit" value="submit">
                 <br><br>
@@ -188,12 +188,13 @@
             
 
         </form>
-        <p><a href="Login.php"><b style="color:red;">Click here for Login</b></a></p>
+        <p><a href="login.php"><b style="color:red;">Click here</b></a>  for login.</p>
 
         <script>
              function isvalid()
              {
                  var flag = true;
+
                  var fnameErr=document.getElementById("fnameErr");
                  var lnameErr=document.getElementById("lnameErr");
                  var genderErr=document.getElementById("genderErr");
@@ -204,6 +205,7 @@
                  var passwordErr=document.getElementById("passwordErr");
 
                  var fname=document.forms["registration"]["fname"].value;
+                 console.log(fname);
                  var lname=document.forms["registration"]["lname"].value;
                  var gender=document.forms["registration"]["gender"].value;
                  var dob=document.forms["registration"]["dob"].value;
@@ -226,45 +228,45 @@
                     fnameErr.innerHTML="*required";
                     flag=false;
                 }
-                if(lname =="")
+                if(lname ==="")
                 {
                     lnameErr.innerHTML="*required";
                     flag=false;
                 }
-                if(gender =="")
+                if(gender ==="")
                 {
                     genderErr.innerHTML="*required";
                     flag=false;
                 }
-                if(dob =="")
+                if(dob ==="")
                 {
                     dobErr.innerHTML="*required";
                     flag=false;
                 }
-                if(religion =="")
+                if(religion ==="")
                 {
                     religionErr.innerHTML="*required";
                     flag=false;
                 }
-                if(email =="")
+                if(email ==="")
                 {
                     emailErr.innerHTML="*required";
                     flag=false;
                 }
                 
 
-                if(username =="")
+                if(username ==="")
                 {
                     userNameErr.innerHTML="*required";
                     flag=false;
                 }
 
-                if(password =="")
+                if(password ==="")
                 {
                     passwordErr.innerHTML="*required";
                     flag=false;
                 }
-
+                
                 return flag;
 
              }
